@@ -1,16 +1,19 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Support\Facades\App;
+use App\Http\Controllers\SociosController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+///// Socios //////
+
+Route::get('/socios', function () {
+    return view('socios.index');
+});
+//Route::get('/socios/crear',[SociosController::class,'create']);
+
+
+Route::resource('socios', 'SociosController');  //crea todas las vistas del controlador
+
