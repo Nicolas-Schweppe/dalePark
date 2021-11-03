@@ -17,8 +17,9 @@ class SociosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('socios.index');
+    {   
+        $datos['socios']=Socios::paginate(5);
+        return view('socios.index',$datos);
     }
 
     /**
@@ -39,12 +40,7 @@ class SociosController extends Controller
      */
     public function store(Request $request)
     {
-        //$socio = new Socios;
-        //$socio = request()->get('nombre');
-        //$socio = request()->get('apellido');
-        //$socio = request()->get('dni');
-        //$socio = request()->get('correo');
-        //$socio = request()->get('telefono');
+        
         $datoSocio = request()->except('_token');
         Socios::insert($datoSocio);
         return response()->json($datoSocio);
