@@ -1,0 +1,35 @@
+.subtitulos {
+    font-size: "arial black";
+    height: 50px;
+    text-align:center;
+    animation-name:zoomIn  ;
+    animation-duration: 2s;
+  }
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+  }
+  .focus a{
+    
+  transition: background-color .5s;
+   color:#fdfdfdaf;
+  }
+  a:hover {
+    
+    color:#ffae00;
+  }
+ 
+  

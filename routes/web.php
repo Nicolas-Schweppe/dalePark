@@ -5,7 +5,7 @@ use App\Http\Controllers\SociosController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('menu');
 });
 ///// Socios //////
 
@@ -14,6 +14,6 @@ Route::get('/socios', function () {
 });
 //Route::get('/socios/crear',[SociosController::class,'create']);
 
-
-Route::resource('socios', 'SociosController');  //crea todas las vistas del controlador
+// para ver las rutas - php artisan route:list
+Route::resource('socios', 'SociosController');  //crea todas las vistas del controlador para 
 

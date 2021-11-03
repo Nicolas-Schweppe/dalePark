@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Socios;
+
 use Illuminate\Http\Request;
+use App\Models\Socios;
+use App\Http\Controllers\Controller;
+
 
 
 class SociosController extends Controller
@@ -36,10 +39,18 @@ class SociosController extends Controller
      */
     public function store(Request $request)
     {
-        //$datoSocio = request()->all();
+        //$socio = new Socios;
+        //$socio = request()->get('nombre');
+        //$socio = request()->get('apellido');
+        //$socio = request()->get('dni');
+        //$socio = request()->get('correo');
+        //$socio = request()->get('telefono');
         $datoSocio = request()->except('_token');
         Socios::insert($datoSocio);
         return response()->json($datoSocio);
+        
+        //$socio->save();
+        
     }
 
     /**
