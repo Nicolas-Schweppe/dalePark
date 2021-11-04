@@ -18,7 +18,7 @@ class SociosController extends Controller
      */
     public function index()
     {   
-        $datos['socios']=Socios::paginate(5);
+        $datos['socios']=Socios::paginate();
         return view('socios.index',$datos);
     }
 
@@ -91,6 +91,7 @@ class SociosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Socios::destroy($id);
+        return redirect('socios');
     }
 }

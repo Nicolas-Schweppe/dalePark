@@ -15,6 +15,9 @@
             <th>Dni</th>
             <th>Correo</th>
             <th>Telefono</th>
+            <th>Pagar</th>
+            <th>Editar</th>
+            <th>Borrar</th>
         </tr>
     </thead>
 
@@ -29,6 +32,16 @@
             <td>{{$socio->Dni}}</td>
             <td>{{$socio->Correo}}</td>
             <td>{{$socio->Telefono}}</td>
+            <td><button type ="submit" name ="editar"  onclick=""><img alt="" src="img/moneda.png" width="30" height="20"></button></td>
+            <td><button  type ="button" id ="borrar"  onclick=""><img alt="" src="img/editar.png" width="30" height="20"></button></td>
+            <td>
+            <form action="{{url('/socios/'.$socio->id)}}" method="POST" >
+             @csrf   
+             {{method_field('DELETE')}}
+            <button  type="submit"   onclick="return confirm('¿Desea borrarlo?')" /> <img src="img/borrar.png" width="30" height="30"></button>
+            
+        </form> 
+    </td>
         </tr>
         @endforeach
     </tbody>
