@@ -29,7 +29,7 @@ class SociosController extends Controller
      */
     public function create()
     {
-        return view('socios.formularioSocio');
+        return view('socios.crearSocio');
     }
 
     /**
@@ -43,7 +43,7 @@ class SociosController extends Controller
         
         $datoSocio = request()->except('_token');
         Socios::insert($datoSocio);
-        return response()->json($datoSocio);
+        return redirect('socios');
         
         //$socio->save();
         
@@ -68,7 +68,8 @@ class SociosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $socio=Socios::findOrFail($id);
+        return view('socios.editarSocio',compact('socio'));
     }
 
     /**
@@ -80,7 +81,9 @@ class SociosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datoSocio = request()->except(['_token','_method']);
+        Socios::where('id','=',$id)->update($datoSocio);
+        return redirect('socios');
     }
 
     /**

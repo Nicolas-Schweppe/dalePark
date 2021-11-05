@@ -19,7 +19,7 @@ class CreateSociosTable extends Migration
             $table->string('Apellido',50);
             $table->string('Dni',50);
             $table->string('Correo',50);
-            $table->integer('Telefono',50);
+            $table->string('Telefono',50);
             $table->timestamps();
         });
     }

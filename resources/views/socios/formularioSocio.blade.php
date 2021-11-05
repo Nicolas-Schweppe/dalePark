@@ -1,14 +1,10 @@
-@extends('menu')
-@section('pagina')
-    
-
     
 <br>
 <div class="row" style="opacity: 90%;">
     <div class="col-md-5 mx-auto">
         <div class="card">
             <div class="card-header" style="text-align: center;">
-               <h4 class="es">Nuevo Socio</h4> 
+               <h4 class="es">Datos de Socio</h4> 
             </div>
             <div class="card-body">
                 <form action="{{url('/socios')}}" method="POST" >
@@ -37,4 +33,3 @@
     </div>
 </div>
 
-@endsection
